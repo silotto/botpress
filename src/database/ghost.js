@@ -12,6 +12,7 @@ module.exports = knex => {
       table.string('folder')
       table.string('file')
       table.text('content')
+      table.boolean('deleted').defaultTo(false)
       table.timestamp('modified_on').defaultTo(knex.fn.now())
     })
     .then(() =>
